@@ -1,20 +1,25 @@
 from random import choice
-
+#how hard to win
+#Loop that pulls numbers until your ticket wins
+#print message saying how long it took for ticket to win
 #All possible lottery entries
-options = [1,2,3,4,5,6,7,8,9,0,'a','b','c','d','e']
+def generate_ticket():
+	options = [1,2,3,4,5,6,7,8,9,0,'a','b','c','d','e']
+	ticket = []
+	while len(ticket) < 4:
+		value_a = choice(options)
 
-#Initial lottery list
-winning_ticket = []
+		if value_a not in ticket:
+			ticket.append(value_a)
+	
+	return ticket
 
-#Making ticket length 4
-while len(winning_ticket) < 4:
-	#Selecting random winning number
-	value_a = choice(options)
-
-	#Confirms random number only appears in ticket once and adds value to value_a
-	if value_a not in winning_ticket:
-		winning_ticket.append(value_a)
+winning_ticket = generate_ticket()
+print(winning_ticket)
 
 
-print(f'Winning Ticket: {winning_ticket}')
+
+
+
+
 
