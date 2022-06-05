@@ -1,14 +1,20 @@
 from random import choice
 
 #All possible lottery entries
-lottery = [1,2,3,4,5,6,7,8,9,0,'a','b','c','d','e']
+options = [1,2,3,4,5,6,7,8,9,0,'a','b','c','d','e']
 
-#Values for lottery
-value_a = choice(lottery)
-value_b = choice(lottery)
-value_c = choice(lottery)
-value_d = choice(lottery)
-winning_ticket = f'Winning numbers:{value_a}{value_b}{value_c}{value_d}'
+#Initial lottery list
+winning_ticket = []
 
-print(winning_ticket)
+#Making ticket length 4
+while len(winning_ticket) < 4:
+	#Selecting random winning number
+	value_a = choice(options)
+
+	#Confirms random number only appears in ticket once and adds value to value_a
+	if value_a not in winning_ticket:
+		winning_ticket.append(value_a)
+
+
+print(f'Winning Ticket: {winning_ticket}')
 
