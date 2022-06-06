@@ -17,6 +17,24 @@ def generate_ticket():
 winning_ticket = generate_ticket()
 print(winning_ticket)
 
+status = True
+count = 0
+
+while True:
+	count += 1
+	your_ticket = generate_ticket()
+	if your_ticket != winning_ticket:
+		print(f'{your_ticket} {winning_ticket}')
+		print("Your ticket was not a winner!")
+	else:
+		print(f'\nTicket # : {your_ticket} winning_ticket #: {winning_ticket}')
+		print("You won the lottery!")
+		print(f" It took you {count} tries!")
+		break
+
+
+
+
 
 
 
